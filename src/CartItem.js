@@ -42,7 +42,7 @@ class CartItem extends React.Component {
             <img
               alt="increase"
               className="action-icons"
-              src="https://image.flaticon.com/icons/svg/992/992651.svg"
+              src="https://cdn.pixabay.com/photo/2018/11/13/21/44/instagram-3814061__340.png"
               onClick={this.increaseQuantity}
             />
             <img
