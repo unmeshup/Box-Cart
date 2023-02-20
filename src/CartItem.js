@@ -21,7 +21,7 @@ class CartItem extends React.Component {
     })
 
      promise.then(() => {
-        setState acts like a synchronus call
+    
       this.setState({ qty: this.state.qty + 10 });
 
      this.setState({ qty: this.state.qty + 10 });
