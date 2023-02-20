@@ -10,22 +10,40 @@ class CartItem extends React.Component {
       img: ''
     }
     // this.increaseQuantity = this.increaseQuantity.bind(this);
+     this.testing();
   }
+
+   testing () {
+     const promise = new Promise((resolve, reject) => {
+       setTimeout(() => {
+        resolve('done');
+      }, 5000);
+    })
+
+     promise.then(() => {
+        setState acts like a synchronus call
+      this.setState({ qty: this.state.qty + 10 });
+
+     this.setState({ qty: this.state.qty + 10 });
+
+      this.setState({ qty: this.state.qty + 10 });
+
+      console.log('state', this.state);
+    });
+   }
   increaseQuantity = () => {
     // this.state.qty += 1;
     // console.log('this', this.state);
     // setState form 1
     // this.setState({
     //   qty: this.state.qty + 1
-    // });
+    // }, () => {});
 
     // setState form 2 - if prevState required use this
     this.setState((prevState) => {
       return {
         qty: prevState.qty + 1
       }
-    }, () => {
-      console.log('this.state', this.state);
     });
   }
 
@@ -71,7 +89,7 @@ class CartItem extends React.Component {
             <img
               alt="delete"
               className="action-icons"
-              src="https://image.flaticon.com/icons/svg/1214/1214428.svg"
+              src="https://t4.ftcdn.net/jpg/01/90/89/15/240_F_190891550_N7uKp2aHE3mOc20dmtDytj7atgvbhdOu.jpg"
             />
           </div>
         </div>
