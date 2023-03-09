@@ -70,21 +70,42 @@ class App extends React.Component {
     if (products[index].qty === 0) {
       return;
     }
-    products[index].qty -= 1;
+    // products[index].qty -= 1;
 
-    this.setState({
-      products
-    });
+    // this.setState({
+    //   products
+    // });
+    const docRef = this.db.collection("products").doc(products[index].id);
+
+    docRef
+      .update({ qty: products[index].qty - 1 })
+      .then(() => {
+        console.log("Document updated sucessfully");
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   handleDeleteProduct = id => {
     const { products } = this.state;
 
-    const items = products.filter(product => product.id !== id);
+    const docRef = this.db.collection("products").doc(id);
 
-    this.setState({
-      products: items
-    });
+    docRef
+      .delete()
+      .then(() => {
+        console.log("Deleted sucessfully");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    // const items = products.filter(product => product.id !== id);
+
+    // this.setState({
+    //   products: items
+    // });
   };
 
   getcountOfCartItems = () => {
