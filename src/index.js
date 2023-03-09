@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import * as firebase from "firebase";
+import "firebase/firestore";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 
 const firebaseConfig = {
