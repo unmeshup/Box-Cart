@@ -3,7 +3,7 @@ import "./App.css";
 // import CartItem from './CartItem';
 import Cart from "./Cart";
 import Navbar from "./Navbar";
-import * as firebase from "firebase";
+import firebase from "firebase";
 
 class App extends React.Component {
   constructor() {
