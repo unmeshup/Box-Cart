@@ -3,7 +3,7 @@ import "./App.css";
 // import CartItem from './CartItem';
 import Cart from "./Cart";
 import Navbar from "./Navbar";
-import firebase from "firebase";
+import * as firebase from "firebase";
 
 class App extends React.Component {
   constructor() {
@@ -14,12 +14,26 @@ class App extends React.Component {
     };
   }
 
+  // componentDidMount() {
+  //   firebase
+  //     .firestore()
+  //     .collection("products")
+  //     .get()
+  //     .then(snapshot => {
+  //       const products = snapshot.docs.map(doc => {
+  //         const data = doc.data();
+  //         data["id"] = doc.id;
+  //         return data;
+  //       });
+  //       this.setState({ products: products, loading: false });
+  //     });
+  // }
+
   componentDidMount() {
     firebase
       .firestore()
       .collection("products")
-      .get()
-      .then(snapshot => {
+      .onSnapshot(snapshot => {
         const products = snapshot.docs.map(doc => {
           const data = doc.data();
           data["id"] = doc.id;
