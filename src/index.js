@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as firebase from "firebase";
 import "firebase/firestore";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { initializeApp } from firebase;
 
 const firebaseConfig = {
   apiKey: "AIzaSyArL47LzD-oRCg8g9o8EO3xaN1bb68CWrk",
