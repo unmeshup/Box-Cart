@@ -4,6 +4,7 @@ import "./App.css";
 import Cart from "./Cart";
 import Navbar from "./Navbar";
 import * as firebase from "firebase";
+import "firebase/firestore";
 
 class App extends React.Component {
   constructor() {
